@@ -1,0 +1,106 @@
+1. JSON Extractor
+User Story:
+As a developer, I want to extract specific key-value pairs from JSON data so that I can isolate relevant information to be used in document generation.
+
+Acceptance Criteria:
+
+Given JSON input, the JSON Extractor should identify and extract data based on specified keys (e.g., question, answers).
+Extracted data should be stored in a consistent dictionary format for further processing.
+The extractor should be able to handle nested JSON structures and indexed keys.
+Non-essential keys (e.g., metadata, unused properties) should be skipped if specified.
+2. Document Converter
+User Story:
+As a user, I want to convert extracted JSON data, including HTML content, into a structured format so that it can be prepared for generating a document.
+
+Acceptance Criteria:
+
+The Document Converter should correctly interpret HTML content in JSON values and convert it to formatted text.
+HTML tags (e.g., <div>, <img>, <p>) should be parsed and rendered as appropriate styles in the output format.
+All converted content should be compatible with the Word document format.
+Converter should handle various HTML structures gracefully and ignore unsupported or unknown HTML elements without errors.
+3. Word Document Generator
+User Story:
+As a user, I want a generated Word document to accurately reflect structured data, including formatted questions and answers, so that it appears professional and readable.
+
+Acceptance Criteria:
+
+The Word Document Generator should generate a .docx file from structured data provided by the Document Converter.
+Each question and answer should be formatted as a separate paragraph with clear headings.
+Paragraphs should have controlled spacing, alignment, and proper line spacing, as specified by document requirements.
+Document generation should support embedded images and hyperlinks within the answer content if present.
+Generated documents should save under a specified file name and path.
+4. Handling Multiple DLLs
+User Story:
+As a developer, I want the system to load and manage multiple external DLLs dynamically so that I can extend functionality without hardcoding dependencies.
+
+Acceptance Criteria:
+
+The system should load DLLs from a specified directory at runtime.
+Loaded DLLs should be accessible for use in document generation tasks without requiring a full application restart.
+The system should handle missing DLLs gracefully by logging errors or warnings without interrupting other tasks.
+Loaded DLLs should allow customization of document processing based on the extracted JSON data structure and any additional processing needs.
+5. Generate Filtered Document
+User Story:
+As a user, I want to create a secondary Word document that includes only selected key-value pairs (e.g., question and answer) so that I have a summarized version of the full document.
+
+Acceptance Criteria:
+
+The system should create a second document containing only question and answer pairs extracted from the JSON data.
+Filtered document formatting should match the main document but omit unnecessary details.
+Both documents (full and filtered) should be generated in one execution, with unique file names to avoid conflicts.
+The user should be able to specify output paths for each document.
+
+User Story:
+
+As a user, I want the system to automatically generate unique, descriptive file names for each document so that I can easily identify and differentiate between various document versions without manually renaming them.
+
+Acceptance Criteria:
+
+The system should generate file names that reflect the document's content (e.g., Full_Document and Filtered_Document).
+Each file name should include a timestamp or unique identifier to prevent overwriting when multiple documents are generated in one execution.
+File names should follow a consistent naming convention for readability, such as DocumentType_DateTime.docx.
+The user should have the option to specify a base name or prefix for the generated documents if desired.
+
+
+
+
+
+You said:
+Could you create one use story for this requirement R&D
+ChatGPT said:
+
+ChatGPT
+User Story:
+
+As a developer, I want to conduct R&D on implementing a solution that integrates JSON extraction, document conversion, and API data handling, so that I can evaluate and prototype the components needed for seamless document generation from dynamic API responses.
+
+Acceptance Criteria:
+
+Research and document methods for extracting JSON data from API responses, including testing various libraries or tools (e.g., JsonExtractor).
+Explore approaches for converting extracted JSON data into structured Word documents, using OpenXML or similar libraries for document formatting.
+Investigate handling HTML within JSON responses, ensuring correct parsing and formatting when incorporated into Word documents.
+Identify methods for dynamically loading and managing multiple DLLs required by various components at runtime.
+Produce a detailed R&D report or prototype outlining findings, challenges, and potential solutions for each component.
+Evaluate the feasibility of generating a filtered document containing only specific key-value pairs (e.g., "question" and "answers") within the same execution process.
+
+
+
+
+
+You said:
+In begin requirement was not clear they told they have api endpoints and they need document. 
+ChatGPT said:
+
+ChatGPT
+User Story:
+
+As a developer, I need to clarify the initial requirement, where it was only specified that API endpoints would be provided to generate a document, so that I can understand the specifics of data extraction, processing, and document generation required for the solution.
+
+Acceptance Criteria:
+
+Engage with stakeholders to gather details on the expected document structure, key-value pairs, and any formatting or content requirements.
+Determine the exact API endpoint response format and identify which data fields are needed in the final document.
+Confirm any requirements for filtering data (e.g., inclusion of only "question" and "answer" fields).
+Identify additional dependencies, such as handling HTML content, images, or metadata.
+Develop a project outline or scope document to ensure all requirements are clear before proceeding with the development of JSON extraction, document conversion, and Word document generation components.
+Obtain approval from stakeholders on the clarified requirements to proceed confidently with implementation.
